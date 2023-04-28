@@ -1,0 +1,10 @@
+.bg-image{
+  background-image: url(../../assets/images/designer_1.png);
+  background-position: top right;
+  background-repeat: no-repeat !important;
+  background-blend-mode: multiply;
+  content: '';
+  height: 150%;
+  position: absolute;
+  width: 100%;
+}

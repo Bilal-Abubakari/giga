@@ -1,0 +1,8 @@
+.bg-image{
+  background-image: url(/assets/images/Rectangle.png);
+  background-repeat: no-repeat !important;
+  background-size: cover;
+  content: '';
+  height: 70%;
+  width: 100%;
+}
