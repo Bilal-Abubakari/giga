@@ -1,11 +1,21 @@
 <div class="flex flex-col">
-  <label class="text-gray-700 dark:text-gray-200" for="username">{{label}}</label>
+  <label class="text-gray-700 dark:text-gray-200" [for]=[id]>
+    {{label}} <span *ngIf="required" class="text-[red] text-lg">*</span>
+  </label>
   <div class="inline-block relative">
-    <select class="block w-full px-4 py-2.5 mt-2 text-gray-700 focus-visible:border-primary border-[#050522] rounded-md appearance-none bg-white border border-gray-400 hover:border-gray-500 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline">
-      <option *ngFor="let option of options">{{option}}</option>
+    <select [required]="required" [formControl]="control" [id]="id"
+      class="block w-full px-4 py-2.5 mt-2 text-gray-700 focus-visible:border-primary border-[#050522] rounded-md appearance-none bg-white border border-gray-400 hover:border-gray-500 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline"
+    >
+      <option disabled selected ngValue="">{{selectLabel}}</option>
+      <option [ngValue]="option" *ngFor="let option of options">{{option}}</option>
     </select>
     <div class="pointer-events-none absolute inset-y-7 right-0 flex items-center px-2 text-gray-700">
       <svg class="fill-current h-8 w-8 text-grey_600" fill="#5D6970" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
     </div>
   </div>
+  <ng-container *ngIf="control.invalid && control.dirty && control.touched">
+    <span *ngFor="let error of control.errors | keyvalue" class="text-sm text-[red]">
+      {{errorMessages[error.key]}}
+    </span>
+  </ng-container>
 </div>

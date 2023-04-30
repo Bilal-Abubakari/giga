@@ -21,6 +21,7 @@ import { InputComponent } from './shared/components/input/input.component';
 import { SectionHeadingComponent } from './request-fiber/section-heading/section-heading.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { SelectComponent } from './shared/components/select/select.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { SelectComponent } from './shared/components/select/select.component';
     MatIconModule,
     NgOptimizedImage,
     MatDialogModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

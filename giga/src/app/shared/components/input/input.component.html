@@ -1,5 +1,15 @@
 <div>
-  <label class="text-gray-700 dark:text-gray-200" for="username">{{label}}</label>
-  <input id="username" [type]="type" [placeholder]="placeholder"
-         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border focus-visible:border-primary border-[#050522] rounded-md">
+  <label class="text-gray-700 dark:text-gray-200" for="username">
+    {{label}} <span *ngIf="required" class="text-[red] text-lg">*</span>
+  </label>
+  <input id="username" [type]="type" [placeholder]="placeholder" [required]="required" [formControl]="control"
+         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border focus-visible:border-primary border-[#050522] rounded-md"
+         [ngClass]="capitalize ? 'capitalize' : ''"
+  >
+  <div class="max-w-md break-normal text-sm">{{ info }}</div>
+  <ng-container *ngIf="control.invalid && control.dirty && control.touched">
+    <span *ngFor="let error of control.errors | keyvalue" class="text-sm text-[red]">
+      {{errorMessages[error.key]}}
+    </span>
+  </ng-container>
 </div>
