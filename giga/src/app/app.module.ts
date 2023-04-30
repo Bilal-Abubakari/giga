@@ -15,6 +15,12 @@ import {NgOptimizedImage} from "@angular/common";
 import { InfoHeroComponent } from './home/info-hero/info-hero.component';
 import { SubscriptionComponent } from './home/subscription/subscription.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { RequestFiberComponent } from './request-fiber/request-fiber.component';
+import { FormComponent } from './request-fiber/form/form.component';
+import { InputComponent } from './shared/components/input/input.component';
+import { SectionHeadingComponent } from './request-fiber/section-heading/section-heading.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { SelectComponent } from './shared/components/select/select.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +33,11 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     InfoHeroComponent,
     SubscriptionComponent,
     FooterComponent,
+    RequestFiberComponent,
+    FormComponent,
+    InputComponent,
+    SectionHeadingComponent,
+    SelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +45,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     BrowserAnimationsModule,
     MatIconModule,
     NgOptimizedImage,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,54 @@
+ <section class="max-w-4xl overflow-auto p-6 mx-auto bg-white mt-20">
+   <button class="float-right text-xs border-primary mb-20 border-2 text-primary rounded-full w-8 h-8">
+     <mat-icon mat-dialog-close="true">close</mat-icon>
+   </button>
+    <h2 class="text-lg border-b font-semibold p-4 text-gray-700 capitalize">Request Fiber Form</h2>
+    <form>
+      <app-section-heading [name]="'Applicant Details'"/>
+      <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+        <app-input [label]="'First Name'" [placeholder]="'First Name'" [type]="'text'"/>
+        <app-input [label]="'Last Name'" [placeholder]="'Last Name'" [type]="'text'"/>
+        <app-input [label]="'Other Names'" [placeholder]="'Other Names'" [type]="'text'"/>
+        <app-input [label]="'Date of Birth'" [type]="'date'"/>
+        <app-select [label]="'ID Type'" [options]="idTypes"/>
+        <app-input [label]="'ID Number'" [placeholder]="'ID Number'" [type]="'text'"/>
+      </div>
+      <app-section-heading [name]="'Postal Address'"/>
+      <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+        <app-input [label]="'Postal Address'" [placeholder]="'Postal Address'"/>
+        <app-select [label]="'Region'" [options]="regions"/>
+      </div>
+      <app-section-heading [name]="'Installation Address'"/>
+      <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+        <app-select [label]="'Region'" [options]="regions"/>
+      </div>
+      <app-section-heading [name]="'Giga Service'"/>
+      <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+        <app-select [label]="'Do you already have a fixed line?'" [options]="yesNo"/>
+        <app-select [label]="'Preferred Fixed Data Package'" [options]="dataPackages"/>
+        <app-select [label]="'Preferred Fixed Voice Package'" [options]="voicePackage"/>
+      </div>
+      <app-section-heading [name]="'Contact Person Details'"/>
+      <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+        <app-input [label]="'First Name'" [placeholder]="'First Name'"/>
+        <app-input [label]="'Last Name'" [placeholder]="'Last Name'"/>
+        <app-input [label]="'Phone Number'" [placeholder]="'Phone Number'"/>
+        <app-input [label]="'Alternative Phone Number'" [placeholder]="'Alternative Phone Number'"/>
+        <app-input [label]="'Email'" [placeholder]="'e.g. myemail@example.com'"/>
+        <app-input [label]="'Confirm Email'" [placeholder]="'e.g. myemail@example.com'"/>
+      </div>
+      <app-section-heading [name]="'Other'"/>
+      <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+        <app-input [label]="'Preferred Broadband Username'" [placeholder]="'Preferred Broadband Username'"/>
+        <app-select [label]="'How did you get to know about this product?'" [options]="source"/>
+      </div>
+      <div class="mt-4">By clicking Apply you affirm that you have read and accepted the Terms and Conditions</div>
+      <mat-dialog-actions class="mt-8" align="end">
+        <button class="bg-primary hover:border-main_blue hover:bg-main_blue px-20 py-3 text-white rounded-2xl border border-primary">Apply</button>
+      </mat-dialog-actions>
+    </form>
+   <div class="mt-12">
+     For enquiries please call 100 (Giga numbers only), 0324234234234324 from all other network (charges apply) or visit any of our retail shops
+   </div>
+  </section>
+
